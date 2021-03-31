@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha512-MoRNloxbStBcD8z3M/2BmnT+rg4IsMxPkXaGh2zD6LGNNFE80W3onsAhRcMAMrSoyWL9xD7Ert0men7vR8LUZg==" crossorigin="anonymous" />
+
+  <title>Peek-a-boo for Discord</title>
+  <style>
+    @font-face {
+        font-family: 'IBMPlexSansKR-Regular';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Regular.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    * {
+      font-family: 'IBMPlexSansKR-Regular', sans-serif
+    }
+        
+  </style>
+</head>
+<body>
+
+  <div class="container mt-3"">
+    <h1 class="mb-2">Peek-a-boo for Discord</h1>
+    <p class="mb-2">Watch seegong-blocked streams via previews!</p>
+    <hr>
+    <p class="mb-2"><strong>Generated Link: </strong><pre id="link"></pre></p>
+
+    <div class="card mb-3">
+      <div class="card-body">
+        <h2>Enter your credentials.</h2>
+        <p class="mb-2">Get one from Developer Section of Discord</p>
+
+        <input class="form-control" type="text" id="token" placeholder="Authorization Token">
+        <input class="form-control" type="text" id="super-props" placeholder="X-Super-Properties">
+      </div>
+    </div>
+
+    <div class="card mb-3">
+      <div class="card-body">
+        <h2>Info of Stream</h2>
+        <p class="mb-2">Just use copy ID developer feature</p>
+
+        <input class="form-control mb-2" type="text" id="guildId" placeholder="Guild ID">
+        <input class="form-control mb-2" type="text" id="channelId" placeholder="Channel ID">
+        <input class="form-control" type="text" id="userId" placeholder="User ID">
+      </div>
+    </div>
+
+    <div class="card mb-3">
+      <div class="card-body">
+        <h2>Image</h2>
+        <p class="mb-2">Here is the preview image of the stream!</p>
+        <pre id="image-link"></pre>
+        <pre id="timeout"></pre>
+        
+        <div id="image-data" class="mb-2">
+
+        </div>
+      </div>
+    </div>
+
+    <button class="btn btn-primary mb-3" onclick="getIt(true)">
+      Get Screenshot
+    </button>
+  </div>
+  
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha512-M5KW3ztuIICmVIhjSqXe01oV2bpe248gOxqmlcYrEzAvws7Pw3z6BK0iGbrwvdrUQUhi3eXgtxp5I8PDo9YfjQ==" crossorigin="anonymous"></script>
+<script>
+  let lemmeSeeThat = undefined;
+  let inputData = getInput();
+
+  let defaultSuperProps = "eyJvcyI6Ik1hYyBPUyBYIiwiYnJvd3NlciI6IkRpc2NvcmQgQ2xpZW50IiwicmVsZWFzZV9jaGFubmVsIjoic3RhYmxlIiwiY2xpZW50X3ZlcnNpb24iOiIwLjAuMjYyIiwib3NfdmVyc2lvbiI6IjIwLjMuMCIsIm9zX2FyY2giOiJ4NjQiLCJzeXN0ZW1fbG9jYWxlIjoiZW4tVVMiLCJjbGllbnRfYnVpbGRfbnVtYmVyIjo4MDg4NiwiY2xpZW50X2V2ZW50X3NvdXJjZSI6bnVsbH0=";
+  
+  const inputs = [
+    document.getElementById("token"),
+    document.getElementById("super-props"),
+    document.getElementById("guildId"),
+    document.getElementById("channelId"),
+    document.getElementById("userId"),
+  ];
+
+  document.getElementById("super-props").value = defaultSuperProps;
+
+  for (const input of inputs) {
+    input.addEventListener("change", () => {
+      inputData = getInput();
+      saveData(inputData);
+    });
+  } 
+
+  function getInput() {
+    const token = document.getElementById("token").value;
+    const superProps = document.getElementById("super-props").value;
+
+    const guildId = document.getElementById("guildId").value;
+    const channelId = document.getElementById("channelId").value;
+    const userId = document.getElementById("userId").value;
+
+    return { guildId, token, superProps, channelId, userId };
+  }
+
+  function generateLink() {
+    const { guildId, channelId, userId, token, superProps } = inputData;
+
+    const link = `https://discord.com/api/v8/streams/guild:${guildId}:${channelId}:${userId}/preview?version=${Date.now()}`;
+    document.getElementById('link').innerHTML = link;
+
+    return link;
+  }
+
+  function generateHeaders() {
+    const { guildId, channelId, userId, token, superProps } = inputData;
+
+    return { 
+      "authorization": token,
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_0_0) AppleWebKit/537.36 (KHTML, like Gecko) discord/0.0.262 Chrome/83.0.4103.1",
+      "x-super-properties": superProps,
+      "referer": `https://discord.com/channels/${guildId}/${channelId}`
+    }
+  }
+
+  async function doRequest(url) {
+    const headers = generateHeaders();
+    console.log(headers);
+
+    const response = await fetch(
+      url,
+      {
+        headers,
+      }
+    )
+    return await response.json();
+  }
+
+  async function getIt(startTimeout) {
+    const data = await doRequest(generateLink(getInput()));
+    const url = data.url;
+
+    document.getElementById("image-link").innerHTML = url;
+
+    document.getElementById('image-data').innerHTML = `<img class="mb-3" width="100%" src="${url}"></img>`;
+
+    if (startTimeout) {
+      leftTime = 30;
+    }
+  }
+
+  function loadData() {
+    return localStorage.getItem("eva")
+  }
+
+  function saveData(data) {
+    localStorage.setItem("eva", JSON.stringify(data))
+  }
+
+  function applyData(data) {
+    if (data === '' || data === undefined || data === null) {
+      return false;
+    }
+
+    const json = JSON.parse(data);
+
+    document.getElementById("token").value = json.token;
+    document.getElementById("super-props").value = json.superProps;
+
+    document.getElementById("guildId").value = json.guildId;
+    document.getElementById("channelId").value = json.channelId;
+    document.getElementById("userId").value = json.userId;
+
+    return true
+  }
+
+  const oof = loadData();
+  let updated = applyData(oof);
+  if (updated) {
+    inputData = getInput();
+  }
+
+  let leftTime = -1;
+
+  setInterval(async () => {
+    console.log('do it. ', leftTime);
+    if (leftTime < 0) return;
+
+    document.getElementById("timeout").innerHTML = `${leftTime} seconds left`;
+    if (leftTime > 0) {
+      leftTime--;
+      return;
+    } else {
+      leftTime = -1;
+      await getIt(true);
+    }
+  }, 1000)
+</script>
+</html>
