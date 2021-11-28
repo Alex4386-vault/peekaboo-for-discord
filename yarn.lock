@@ -229,9 +229,9 @@ ajv@^6.10.0, ajv@^6.12.4:
     uri-js "^4.2.2"
 
 ajv@^8.0.1:
-  version "8.8.1"
-  resolved "https://registry.yarnpkg.com/ajv/-/ajv-8.8.1.tgz#e73dd88eeb4b10bbcd82bee136e6fbe801664d18"
-  integrity sha512-6CiMNDrzv0ZR916u2T+iRunnD60uWmNn8SkdB44/6stVORUg0aAkWO7PkOhpCmjmW8f2I/G/xnowD66fxGyQJg==
+  version "8.8.2"
+  resolved "https://registry.yarnpkg.com/ajv/-/ajv-8.8.2.tgz#01b4fef2007a28bf75f0b7fc009f62679de4abbb"
+  integrity sha512-x9VuX+R/jcFj1DHo/fCp99esgGDWiHENrKxaCENuCxpoMCmAt/COCGVDwA7kleEpEzJjDnvh3yGoOuLu0Dtllw==
   dependencies:
     fast-deep-equal "^3.1.1"
     json-schema-traverse "^1.0.0"
@@ -393,11 +393,6 @@ clone-response@^1.0.2:
   dependencies:
     mimic-response "^1.0.0"
 
-clone@^2.1.2:
-  version "2.1.2"
-  resolved "https://registry.yarnpkg.com/clone/-/clone-2.1.2.tgz#1b7f4b9f591f1e8f83670401600345a02887435f"
-  integrity sha1-G39Ln1kfHo+DZwQBYANFoCiHQ18=
-
 color-convert@^1.9.0:
   version "1.9.3"
   resolved "https://registry.yarnpkg.com/color-convert/-/color-convert-1.9.3.tgz#bb71850690e1f136567de629d2d5471deda4c1e8"
@@ -498,9 +493,9 @@ debug@^2.6.9:
     ms "2.0.0"
 
 debug@^4.0.1, debug@^4.1.0, debug@^4.1.1, debug@^4.2.0, debug@^4.3.1:
-  version "4.3.2"
-  resolved "https://registry.yarnpkg.com/debug/-/debug-4.3.2.tgz#f0a49c18ac8779e31d4a0c6029dfb76873c7428b"
-  integrity sha512-mOp8wKcvj7XxC78zLgw/ZA+6TSgkoE2C/ienthhRD298T7UNwAg9diBpLRxC0mOezLl4B0xV7M0cCO6P/O0Xhw==
+  version "4.3.3"
+  resolved "https://registry.yarnpkg.com/debug/-/debug-4.3.3.tgz#04266e0b70a98d4462e6e288e38259213332b664"
+  integrity sha512-/zxw5+vh1Tfv+4Qn7a5nsbcJKPaSvCDhojn6FEl9vupwK2VCSDtEiEtqr8DFtzYFOdz63LBkxec7DYuc2jon6Q==
   dependencies:
     ms "2.1.2"
 
@@ -563,9 +558,9 @@ duplexer3@^0.1.4:
   integrity sha1-7gHdHKwO08vH/b6jfcCo8c4ALOI=
 
 electron@*:
-  version "16.0.1"
-  resolved "https://registry.yarnpkg.com/electron/-/electron-16.0.1.tgz#34c0946bd6b6fa8de5181338a04cb690611f140c"
-  integrity sha512-6TSDBcoKGgmKL/+W+LyaXidRVeRl1V4I81ZOWcqsVksdTMfM4AlxTgfaoYdK/nUhqBrUtuPDcqOyJE6Bc4qMpw==
+  version "16.0.2"
+  resolved "https://registry.yarnpkg.com/electron/-/electron-16.0.2.tgz#6d0ae3152c410478dfffdbf80852a3840679b8c5"
+  integrity sha512-kT746yVMztrP4BbT3nrFNcUcfgFu2yelUw6TWBVTy0pju+fBISaqcvoiMrq+8U0vRpoXSu2MJYygOf4T0Det7g==
   dependencies:
     "@electron/get" "^1.13.0"
     "@types/node" "^14.6.2"
@@ -1215,9 +1210,9 @@ levn@^0.4.1:
     type-check "~0.4.0"
 
 lines-and-columns@^1.1.6:
-  version "1.2.3"
-  resolved "https://registry.yarnpkg.com/lines-and-columns/-/lines-and-columns-1.2.3.tgz#3360dbb0dfffd23a6ad0300135efacb50f50eb73"
-  integrity sha512-bQEvPBbeyPQGdQ/1H/tnLUz0479EH/9pHxCe3TGRQFxpg/PIbBeTUwpm7xyewdFfHjKLGidU/lSH1QkF+i8HUg==
+  version "1.2.4"
+  resolved "https://registry.yarnpkg.com/lines-and-columns/-/lines-and-columns-1.2.4.tgz#eca284f75d2965079309dc0ad9255abb2ebc1632"
+  integrity sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==
 
 lint-staged@^10.5.1:
   version "10.5.4"
@@ -1241,15 +1236,15 @@ lint-staged@^10.5.1:
     stringify-object "^3.3.0"
 
 listr2@^3.2.2:
-  version "3.13.4"
-  resolved "https://registry.yarnpkg.com/listr2/-/listr2-3.13.4.tgz#34101fc0184545597e00d1e7915ccfbfb17332e6"
-  integrity sha512-lZ1Rut1DSIRwbxQbI8qaUBfOWJ1jEYRgltIM97j6kKOCI2pHVWMyxZvkU/JKmRBWcIYgDS2PK+yDgVqm7u3crw==
+  version "3.13.5"
+  resolved "https://registry.yarnpkg.com/listr2/-/listr2-3.13.5.tgz#105a813f2eb2329c4aae27373a281d610ee4985f"
+  integrity sha512-3n8heFQDSk+NcwBn3CgxEibZGaRzx+pC64n3YjpMD1qguV4nWus3Al+Oo3KooqFKTQEJ1v7MmnbnyyNspgx3NA==
   dependencies:
     cli-truncate "^2.1.0"
-    clone "^2.1.2"
     colorette "^2.0.16"
     log-update "^4.0.0"
     p-map "^4.0.0"
+    rfdc "^1.3.0"
     rxjs "^7.4.0"
     through "^2.3.8"
     wrap-ansi "^7.0.0"
@@ -1556,9 +1551,9 @@ prettier-linter-helpers@^1.0.0:
     fast-diff "^1.1.2"
 
 prettier@^2.1.2:
-  version "2.4.1"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.4.1.tgz#671e11c89c14a4cfc876ce564106c4a6726c9f5c"
-  integrity sha512-9fbDAXSBcc6Bs1mZrDYb3XKzDLm4EXXL9sC1LqKP5rZkT6KRr/rf9amVUcODVXgguK/isJz0d0hP72WeaKWsvA==
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.5.0.tgz#a6370e2d4594e093270419d9cc47f7670488f893"
+  integrity sha512-FM/zAKgWTxj40rH03VxzIPdXmj39SwSjwG0heUcNFwI+EMZJnY93yAiKXM3dObIKAM5TA88werc8T/EwhB45eg==
 
 process-nextick-args@~2.0.0:
   version "2.0.1"
@@ -1640,6 +1635,11 @@ reusify@^1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/reusify/-/reusify-1.0.4.tgz#90da382b1e126efc02146e90845a88db12925d76"
   integrity sha512-U9nH88a3fc/ekCF1l0/UP1IosiuIjyTh7hBvXVMHYgVcfGvt897Xguj2UOLDeI5BG2m7/uwyaLVT6fbtCwTyzw==
+
+rfdc@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/rfdc/-/rfdc-1.3.0.tgz#d0b7c441ab2720d05dc4cf26e01c89631d9da08b"
+  integrity sha512-V2hovdzFbOi77/WajaSMXk2OLm+xNIeQdMMuB7icj7bk6zi2F8GGAxigcnDFpJHbNyNcgyJDiP+8nOrY5cZGrA==
 
 rimraf@^3.0.2:
   version "3.0.2"
