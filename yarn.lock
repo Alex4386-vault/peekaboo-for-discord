@@ -121,9 +121,9 @@
   integrity sha512-qcUXuemtEu+E5wZSJHNxUXeCZhAfXKQ41D+duX+VYPde7xyEVZci+/oXKJL13tnRs9lR2pr4fod59GT6/X1/yQ==
 
 "@types/node@^14.14.7", "@types/node@^14.6.2":
-  version "14.18.0"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.18.0.tgz#98df2397f6936bfbff4f089e40e06fa5dd88d32a"
-  integrity sha512-0GeIl2kmVMXEnx8tg1SlG6Gg8vkqirrW752KqolYo1PHevhhZN3bhJ67qHj+bQaINhX0Ra3TlWwRvMCd9iEfNQ==
+  version "14.18.1"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.18.1.tgz#459886b51f52aa923dc06b9ea81cb8b1d733e9d3"
+  integrity sha512-fTFWOFrgAkj737w1o0HLTIgisgYHnsZfeiqhG1Ltrf/iJjudEbUwetQAsfrtVE49JGwvpEzQR+EbMkIqG4227g==
 
 "@types/parse-json@^4.0.0":
   version "4.0.0"
@@ -558,9 +558,9 @@ duplexer3@^0.1.4:
   integrity sha1-7gHdHKwO08vH/b6jfcCo8c4ALOI=
 
 electron@*:
-  version "16.0.4"
-  resolved "https://registry.yarnpkg.com/electron/-/electron-16.0.4.tgz#87dfe21d17608537fc6df292c437362297566a73"
-  integrity sha512-IptwmowvMP1SFOmZLh6rrURwfnOxbDBXBRBcaOdfBM5I+B9mgtdNwzNC3ymFFNzEkZUwdOyg9fu3iyjAAQIQgw==
+  version "16.0.5"
+  resolved "https://registry.yarnpkg.com/electron/-/electron-16.0.5.tgz#16394c196e42215a82da1f4f39a3f757caf33cb1"
+  integrity sha512-TgQXWmEGQ3uH2P2JDq5GyJDEu/fimRgqp1iNisARtGreU1k3630PqWlR+4SPnSEHN9NuSv92ng6NWxtefeFzxg==
   dependencies:
     "@electron/get" "^1.13.0"
     "@types/node" "^14.6.2"
@@ -1934,9 +1934,9 @@ typedarray@^0.0.6:
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
 typescript@^4.0.5:
-  version "4.5.3"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.5.3.tgz#afaa858e68c7103317d89eb90c5d8906268d353c"
-  integrity sha512-eVYaEHALSt+s9LbvgEv4Ef+Tdq7hBiIZgii12xXJnukryt3pMgJf6aKhoCZ3FWQsu6sydEnkg11fYXLzhLBjeQ==
+  version "4.5.4"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.5.4.tgz#a17d3a0263bf5c8723b9c52f43c5084edf13c2e8"
+  integrity sha512-VgYs2A2QIRuGphtzFV7aQJduJ2gyfTljngLzjpfW9FoYZF6xuw1W0vW9ghCKLfcWrCFxK81CSGRAvS1pn4fIUg==
 
 universalify@^0.1.0:
   version "0.1.2"
